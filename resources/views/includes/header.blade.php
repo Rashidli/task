@@ -31,6 +31,23 @@
             margin-right: auto;
             margin-left: auto;
         }
+        .card{
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
+<div class="container">
+    <div class="menu">
+
+            <a href="{{route('lang', 'az')}}">AZ</a>
+
+            <a href="{{route('lang','en')}}">En</a>
+
+        {{Session::get('language')}}
+    </div>
+    @auth()
+        <a href="{{route('logout')}}">Logout</a>
+    @endauth
+</div>
